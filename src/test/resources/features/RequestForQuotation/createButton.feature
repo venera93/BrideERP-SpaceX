@@ -1,4 +1,4 @@
-@Smoke
+@smoketest
 Feature: As a user I should be able to create Request For Quotation
 
   Scenario: User should able to create quotation with filling out dat

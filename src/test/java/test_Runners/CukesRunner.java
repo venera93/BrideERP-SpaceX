@@ -13,7 +13,6 @@ import org.junit.runner.RunWith;
 
         tags =  "@smoketest"
 
-        tags =  "@Smoke"
 
 
 )
