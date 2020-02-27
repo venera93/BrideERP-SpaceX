@@ -1,15 +1,12 @@
-package step_definitions;
+package step_definitions.requestForQuotationSteps;
 
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import org.junit.BeforeClass;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-
-import org.testng.annotations.Test;
-import pages.requestForQuotaton_page.request_pages;
+import pages.requestForQuotaton_page.CreateButton_pages;
 import utilities.Config;
 import utilities.Driver;
 
@@ -17,10 +14,10 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 
-public class RequestForQuotation_Steps {
+public class CreateButton_steps {
 
-  request_pages request_pages = new request_pages();
-  WebDriverWait wait = new WebDriverWait(Driver.getDriver(),10);
+    CreateButton_pages request_pages = new CreateButton_pages();
+    WebDriverWait wait = new WebDriverWait(Driver.getDriver(),10);
 
 
 
@@ -39,11 +36,13 @@ public class RequestForQuotation_Steps {
 
     @When("User click create button")
     public void user_click_create_button() {
+        wait.until(ExpectedConditions.visibilityOf(request_pages.createButton));
         Assert.assertTrue(request_pages.createButton.isDisplayed(), "Create button is not displayed");
         request_pages.createButton.click();
-       Assert.assertTrue(request_pages.createField.isDisplayed());
+        Assert.assertTrue(request_pages.createField.isDisplayed());
 
         String expcetedCreatePageTitle = "New - Odoo";
+        wait.until(ExpectedConditions.titleIs(expcetedCreatePageTitle));
         Assert.assertEquals(Driver.getDriver().getTitle(), expcetedCreatePageTitle);
 
     }
@@ -84,38 +83,7 @@ public class RequestForQuotation_Steps {
 
     @Then("It should display error message")
     public void it_should_display_error_message() {
-       Assert.assertTrue(request_pages.errorMessage.isDisplayed());
+        Assert.assertTrue(request_pages.errorMessage.isDisplayed());
     }
-
-
-    @When("User should be able to see search field and search title inside")
-    public void user_should_be_able_to_see_search_field_and_search_title_inside() {
-        request_pages.requestForQuotationLink.click();
-        wait.until(ExpectedConditions.visibilityOf(request_pages.searchField));
-        Assert.assertTrue(request_pages.searchField.isDisplayed());
-    }
-
-    @When("User click and enter valid input")
-    public void user_click_and_enter_valid_input() {
-        request_pages.searchField.click();
-        request_pages.searchField.sendKeys("ACD");
-        Assert.assertTrue(request_pages.optionsForSearch.isDisplayed());
-    }
-
-
-
-    @Then("User click enter")
-    public void user_click_enter() {
-        request_pages.findByVendor.click();
-    }
-
-    @Then("User should be able to see related result")
-    public void user_should_be_able_to_see_related_result() {
-        Assert.assertTrue(request_pages.relatedResultForVendor.isDisplayed(), "Related result is not there");
-
-    }
-
-
-
 
 }

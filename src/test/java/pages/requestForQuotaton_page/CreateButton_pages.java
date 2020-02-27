@@ -6,9 +6,9 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
-public class request_pages {
+public class CreateButton_pages {
 
-    public request_pages(){
+    public CreateButton_pages(){
         PageFactory.initElements(Driver.getDriver(),this);
     }
 
