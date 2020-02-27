@@ -12,6 +12,7 @@ public class Hooks {
     @Before
     public void setUp(){
         //Anything that you want to run before each Scenario
+
     }
 
     @After

@@ -1,5 +1,6 @@
 package step_definitions.reporting_stepDef;
 
+
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -24,18 +25,24 @@ public class ReportingTab_verification {
 
     @When("user clicks on Purchase tab")
     public void user_clicks_on_Purchase_tab() {
-        reportingTab_page.PurchasesTab.click();
-
+      reportingTab_page.PurchasesTab.click();
     }
 
     @Then("user should see Reporting tab")
     public void user_should_see_Reporting_tab() {
-        Assert.assertTrue("Reporting tab is not displayed!!",reportingTab_page.ReportingTab.isDisplayed());
+        Assert.assertTrue(reportingTab_page.ReportingTab.isDisplayed());
 
     }
 
     @Then("user should taken to the Purchase Analysis page after clicking Reporting tab")
     public void user_should_taken_to_the_Purchase_Analysis_page_after_clicking_Reporting_tab() {
+
         reportingTab_page.ReportingTab.click();
+
+        String actualTitle = Driver.getDriver().getTitle();
+//        System.out.println(actualTitle);
+        String expectedTitle = "Odoo";
+        Assert.assertTrue(actualTitle.equals(expectedTitle));
+
     }
 }
