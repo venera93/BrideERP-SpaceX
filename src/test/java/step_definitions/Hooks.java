@@ -22,7 +22,7 @@ public class Hooks {
             scenario.embed(screenshot, "image/png");
         }
 
-        Driver.quitDriver();
+ //       Driver.quitDriver();
 //        System.out.println(scenario.getName());
 //        System.out.println(scenario.getStatus());
 
