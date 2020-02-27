@@ -1,4 +1,4 @@
-@Smoke
+@smoketest
 Feature: user use search button
 
   Scenario:  User should be able to use Search button
