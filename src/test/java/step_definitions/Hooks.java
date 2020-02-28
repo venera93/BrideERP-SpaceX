@@ -12,6 +12,7 @@ public class Hooks {
     @Before
     public void setUp(){
         //Anything that you want to run before each Scenario
+
     }
 
     @After
@@ -22,7 +23,7 @@ public class Hooks {
             scenario.embed(screenshot, "image/png");
         }
 
-        Driver.quitDriver();
+ //       Driver.quitDriver();
 //        System.out.println(scenario.getName());
 //        System.out.println(scenario.getStatus());
 

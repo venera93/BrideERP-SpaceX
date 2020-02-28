@@ -1,5 +1,6 @@
 package step_definitions.incomingProducts;
 
+import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -13,26 +14,16 @@ import utilities.Driver;
 public class IncomingProductsHomeVerStepDef {
 IncomingProductsPage ipPage = new IncomingProductsPage();
 Login_page login = new Login_page();
-    @Given("User is logged in")
-    public void user_is_logged_in() {
 
-        Driver.getDriver().get("http://app.briteerp.com/web/login#view_type=kanban&model=crm.lead&action=366");
-        login.usernameInput.sendKeys("in_pos_user6@info.com");
-        login.passwordInput.sendKeys("KjKtfgrs42");
+@Given("User is on Incoming Products home page")
+public void user_is_on_Incoming_Products_home_page(){
+            Login_page login = new Login_page();
+        Driver.getDriver().get(Config.getProperty("UrlBriteERP"));
+        login.usernameInput.sendKeys(Config.getProperty("ErpUsername"));
+        login.passwordInput.sendKeys(Config.getProperty("ErpPassword"));
         login.loginButton.click();
-    }
-
-    @Given("User is on Purchases function")
-    public void user_is_on_Purchases_function()  {
-        ipPage.purchases.click();
-
-
-    }
-
-    @When("User is clicking on Incoming Products module")
-    public void user_is_clicking_on_Incoming_Products_module() {
-        ipPage.incomingProductsField.click();
-    }
+    Driver.getDriver().get("http://app2.briteerp.com/web#view_type=list&model=stock.move&menu_id=514&action=519");
+}
 
     @Then("User should be navigated to Incoming Products page")
     public void user_should_be_navigated_to_Incoming_Products_page() throws InterruptedException {
@@ -40,11 +31,5 @@ Login_page login = new Login_page();
         Thread.sleep(4000);
         Assert.assertTrue(Driver.getDriver().getTitle().contains("Incoming Products"));
     }
-
-
-
-
-
-
 
 }

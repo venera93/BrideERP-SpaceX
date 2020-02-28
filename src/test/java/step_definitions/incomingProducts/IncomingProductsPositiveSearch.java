@@ -13,10 +13,6 @@ import java.util.List;
 public class IncomingProductsPositiveSearch {
     IncomingProductsPage ipPage = new IncomingProductsPage();
 
-    @Given("User is on Incoming Products home page")
-    public void user_is_on_Incoming_Products_home_page() {
-        ipPage.incomingProductsField.click();
-    }
 
     @When("User is searching for an {string}")
     public void user_is_searching_for_an(String item) {
@@ -24,11 +20,12 @@ public class IncomingProductsPositiveSearch {
 
     }
     @Then("User should see only searched {string}")
-    public void user_should_see_only_searched(String item) {
+    public void user_should_see_only_searched(String items) throws InterruptedException {
+        Thread.sleep(4000);
         List<WebElement> searchList = ipPage.listOfSearchedItems;
 
         for (WebElement e: searchList) {
-            Assert.assertTrue(e.getText().toLowerCase().contains(item), "Search result is not the same.");
+            Assert.assertTrue(e.getText().toLowerCase().contains(items), "Search result is not the same.");
         }
     }
 
