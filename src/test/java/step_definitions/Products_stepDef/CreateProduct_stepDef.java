@@ -18,10 +18,10 @@ public class CreateProduct_stepDef {
 
     @Then("User on Purchases tab")
     public void userOnPurchasesTab() {
-        Driver.getDriver().get(Config.getProperty("UrlBriteERP"));
-        login_page.usernameInput.sendKeys(Config.getProperty("managerUsername"));
-        login_page.passwordInput.sendKeys(Config.getProperty("managerPassword"));
-        login_page.loginButton.click();
+//        Driver.getDriver().get(Config.getProperty("UrlBriteERP"));
+//        login_page.usernameInput.sendKeys(Config.getProperty("managerUsername"));
+//        login_page.passwordInput.sendKeys(Config.getProperty("managerPassword"));
+//        login_page.loginButton.click();
         createProduct.PurchasesTab.click();
     }
 
@@ -39,17 +39,24 @@ public class CreateProduct_stepDef {
     @Given("User on Products tab under Purchases tab")
     public void userOnProductsTabUnderPurchasesTab() {
 
-        Driver.getDriver().get(Config.getProperty("UrlBriteERP"));
-        login_page.usernameInput.sendKeys(Config.getProperty("managerUsername"));
-        login_page.passwordInput.sendKeys(Config.getProperty("managerPassword"));
-        login_page.loginButton.click();
-        createProduct.PurchasesTab.click();
+//        Driver.getDriver().get(Config.getProperty("UrlBriteERP"));
+//        login_page.usernameInput.sendKeys(Config.getProperty("managerUsername"));
+//        login_page.passwordInput.sendKeys(Config.getProperty("managerPassword"));
+//        login_page.loginButton.click();
+//        createProduct.PurchasesTab.click();
         createProduct.ProductTap.click();
 
     }
 
     @When("User clicks Create Btn")
     public void userClicksCreateBtn() {
+
+        try{
+            createProduct.alert.click();
+        }catch (Exception e){
+
+        }
+
         createProduct.CreateBtn.click();
     }
 
@@ -83,11 +90,11 @@ public class CreateProduct_stepDef {
 
     @Given("User on Products tab")
     public void userOnProductsTab() {
-        Driver.getDriver().get(Config.getProperty("UrlBriteERP"));
-        login_page.usernameInput.sendKeys(Config.getProperty("managerUsername"));
-        login_page.passwordInput.sendKeys(Config.getProperty("managerPassword"));
-        login_page.loginButton.click();
-        createProduct.PurchasesTab.click();
+//        Driver.getDriver().get(Config.getProperty("UrlBriteERP"));
+//        login_page.usernameInput.sendKeys(Config.getProperty("managerUsername"));
+//        login_page.passwordInput.sendKeys(Config.getProperty("managerPassword"));
+//        login_page.loginButton.click();
+//        createProduct.PurchasesTab.click();
         createProduct.ProductTap.click();
 
     }

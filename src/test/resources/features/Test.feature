@@ -1,10 +1,9 @@
 
-@smoketest
+@smoketestManager
 
 
   Feature: Purchases feature
 
-    @smoketest
     Scenario: Reporting tab verification
       Given the user is login as a manager
       When user clicks on Purchase tab

@@ -23,8 +23,8 @@ public class Bill_Info_steps {
 
 //        Login_page login = new Login_page();
 //        Driver.getDriver().get(Config.getProperty("UrlBriteERP"));
-//        login.usernameInput.sendKeys(Config.getProperty("briteUserName"));
-//        login.passwordInput.sendKeys(Config.getProperty("britePassword"));
+//        login.usernameInput.sendKeys(Config.getProperty("ErpUsername"));
+//        login.passwordInput.sendKeys(Config.getProperty("ErpPassword"));
 //        login.loginButton.click();
         Driver.getDriver().get("http://app2.briteerp.com/web#view_type=list&model=account.invoice&menu_id=515&action=687");
     }

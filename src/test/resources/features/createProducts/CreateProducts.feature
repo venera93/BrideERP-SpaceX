@@ -1,5 +1,5 @@
 
-@smoketest
+@smoketestManager
 
 Feature: User should able to Create Product under Products tab
 
@@ -10,7 +10,7 @@ Feature: User should able to Create Product under Products tab
     And User should able to see Create Btn
 
   Scenario: User should able to create new product under Products tab
-    Given User on Products tab under Purchases tab
+#    Given User on Products tab under Purchases tab
     When User clicks Create Btn
     And User should able to write new product name inside of  Product Name field
     And User should able to write cost of product inside of Cost field
