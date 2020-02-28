@@ -12,9 +12,6 @@ import org.junit.runner.RunWith;
         dryRun = false,
         tags =  " @smoketest, @smoketestManager"
 
-
-
-
 )
 
 public class CukesRunner {

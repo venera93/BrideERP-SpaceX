@@ -11,4 +11,3 @@
       And user should taken to the Purchase Analysis page after clicking Reporting tab
 
 
-
