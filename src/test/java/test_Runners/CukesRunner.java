@@ -11,10 +11,7 @@ import org.junit.runner.RunWith;
         glue = "step_definitions",
         dryRun = false,
         tags =  "@smoketest"
-<<<<<<< HEAD
 
-=======
->>>>>>> bf754452526f4d8b1fe64bc47af18d052c5bfbc0
 
 )
 
