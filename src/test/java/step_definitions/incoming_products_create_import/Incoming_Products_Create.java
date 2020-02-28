@@ -39,6 +39,7 @@ public class Incoming_Products_Create {
 
     @When("User fills all required fields")
     public void user_fills_all_required_fields() throws Exception {
+
         pagesIncoming.referenceSourceLocationInput.click();
         Thread.sleep(1000);
         pagesIncoming.searchMore_ReferenceSourceLocationInput.click();
