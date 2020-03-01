@@ -27,12 +27,12 @@ public class ProductsPageForUser {
 
     @When("User enters username")
     public void user_enters_username() {
-        login_page.usernameInput.sendKeys(Config.getProperty("briteUserName"));
+        login_page.usernameInput.sendKeys(Config.getProperty("ErpUsername"));
     }
 
     @When("User enters the password")
     public void user_enters_the_password() {
-        login_page.passwordInput.sendKeys(Config.getProperty("britePassword"));
+        login_page.passwordInput.sendKeys(Config.getProperty("ErpPassword"));
     }
 
     @When("User clicks on the Login button")
@@ -87,8 +87,8 @@ public class ProductsPageForUser {
     }
 
     @Then("User sees a message")
-    public void user_sees_a_message() {
-        SeleniumUtils.waitForVisibility(usersProductsPage.wrongSearchMessage, 10);
+    public void user_sees_a_message() throws InterruptedException{
+        Thread.sleep(5000);
         Assert.assertTrue(usersProductsPage.wrongSearchMessage.isDisplayed(), "The message for wrong item name is NOT displayed!");
     }
 
