@@ -1,6 +1,7 @@
-
 @smoketest
+
 Feature: Purchase orders verification
+
 
   Scenario: Verify Purchase home page
     Given user logged in and on home page
@@ -9,7 +10,7 @@ Feature: Purchase orders verification
 
 
     Scenario: Verify product orders page
-      Given user logged in and on home page
+     Given user logged in and on home page
       Then purchase order option should be displayed under Purchase
       When click on purchase order
       Then user should be navigated to purchase orders landing page
