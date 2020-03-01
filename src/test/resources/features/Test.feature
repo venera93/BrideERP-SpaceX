@@ -1,5 +1,5 @@
 
-@smoketest
+@1smoketest
 
 
   Feature: Purchases feature
