@@ -87,8 +87,8 @@ public class ProductsPageForUser {
     }
 
     @Then("User sees a message")
-    public void user_sees_a_message() throws InterruptedException{
-        Thread.sleep(5000);
+    public void user_sees_a_message() {
+        SeleniumUtils.waitForVisibility(usersProductsPage.wrongSearchMessage, 10);
         Assert.assertTrue(usersProductsPage.wrongSearchMessage.isDisplayed(), "The message for wrong item name is NOT displayed!");
     }
 
