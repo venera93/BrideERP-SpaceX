@@ -21,11 +21,11 @@ public class Bill_Info_steps {
     @Given("User is in Vendor Bill main page")
     public void user_is_in_Vendor_Bill_main_page() {
 
-//        Login_page login = new Login_page();
-//        Driver.getDriver().get(Config.getProperty("UrlBriteERP"));
-//        login.usernameInput.sendKeys(Config.getProperty("ErpUsername"));
-//        login.passwordInput.sendKeys(Config.getProperty("ErpPassword"));
-//        login.loginButton.click();
+        Login_page login = new Login_page();
+        Driver.getDriver().get(Config.getProperty("UrlBriteERP"));
+        login.usernameInput.sendKeys(Config.getProperty("ErpUsername"));
+        login.passwordInput.sendKeys(Config.getProperty("ErpPassword"));
+        login.loginButton.click();
         Driver.getDriver().get("http://app2.briteerp.com/web#view_type=list&model=account.invoice&menu_id=515&action=687");
     }
 
