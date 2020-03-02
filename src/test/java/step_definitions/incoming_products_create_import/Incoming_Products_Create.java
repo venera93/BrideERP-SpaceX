@@ -10,6 +10,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import pages.incoming_products_pages.Icoming_Products_Create_Import_page;
+import pages.requestForQuotaton_page.CreateButton_pages;
+import utilities.Config;
 import utilities.Driver;
 
 import java.util.List;
@@ -17,10 +19,17 @@ import java.util.Random;
 
 public class Incoming_Products_Create {
     Icoming_Products_Create_Import_page pagesIncoming = new Icoming_Products_Create_Import_page();
+    CreateButton_pages request_pages = new CreateButton_pages();
 
     @Given("User is on purchase Module")
-    public void user_is_on_purchase_Module() {
+    public void user_is_on_purchase_Module() throws Exception{
+//        Driver.getDriver().get(Config.getProperty("UrlBriteERP"));
+//        request_pages.loginField.sendKeys(Config.getProperty("ErpUsername"));
+//        request_pages.passwordField.sendKeys(Config.getProperty("ErpPassword"));
+//        request_pages.LoginButton.click();
+//        Thread.sleep(2000);
         pagesIncoming.purchaseTab.click();
+        Thread.sleep(2000);
 
     }
 
@@ -32,8 +41,10 @@ public class Incoming_Products_Create {
     }
 
     @When("user clicks on Create button from Incoming Products")
-    public void user_clicks_on_Create_button_from_Incoming_Priducts() {
+    public void user_clicks_on_Create_button_from_Incoming_Priducts() throws Exception{
         pagesIncoming.createButtonIncomingProducts.click();
+        Thread.sleep(2000);
+
     }
 
 
@@ -63,7 +74,7 @@ public class Incoming_Products_Create {
         //System.out.println(elementsOfDestination);
         int index2 = randomNum.nextInt(boundry2);
         // System.out.println(index2);
-        wait = new WebDriverWait(Driver.getDriver(),3);
+        wait = new WebDriverWait(Driver.getDriver(),5);
         wait.until(ExpectedConditions.visibilityOf( Driver.getDriver().findElement(By.xpath("(//div[@class='table-responsive'])[3]//tbody/tr["+index2+"]"))));
         Driver.getDriver().findElement(By.xpath("(//div[@class='table-responsive'])[3]//tbody/tr["+index2+"]")).click();
 //======================================
@@ -117,12 +128,14 @@ public class Incoming_Products_Create {
         Assert.assertTrue(pagesIncoming.popUpWarning.isDisplayed());
     }
     @When("user clicks on Import button from Incoming Products")
-    public void user_clicks_on_Import_button_from_Incoming_Products() {
+    public void user_clicks_on_Import_button_from_Incoming_Products() throws Exception{
+        Thread.sleep(2000);
         pagesIncoming.importButton.click();
     }
 
     @Then("User is on Import page in Incoming Products")
-    public void user_is_on_Import_page_in_Incoming_Products() {
+    public void user_is_on_Import_page_in_Incoming_Products() throws Exception{
+        Thread.sleep(2000);
         Assert.assertTrue(pagesIncoming.importInput.isDisplayed(), "Imort input button is not displayed");
 
     }

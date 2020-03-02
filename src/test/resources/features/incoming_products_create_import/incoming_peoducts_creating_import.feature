@@ -4,16 +4,17 @@ Feature: As a user I should be able to add a single "Incoming Product" into the 
   Background:
     Given User is on purchase Module
     And User is on Incoming products tab
-    When user clicks on Create button from Incoming Products
+
 #    Then User is on create page in Incoming Products
 
   Scenario: By creating: user should be able to import "incoming product" documents from existing resources
-
+    When user clicks on Create button from Incoming Products
     When User fills all required fields
     When User saves changes
     Then User sees the new created file
 
   Scenario: By creating(Negative): user should be able to import "incoming product" documents from existing resources
+    When user clicks on Create button from Incoming Products
     When User saves changes
     Then User sees pupUp warning
 
