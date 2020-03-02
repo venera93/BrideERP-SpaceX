@@ -52,7 +52,7 @@ public class ProductsPageForUser {
 
     @When("User should be able to see the title Products - Odoo")
     public void user_should_be_able_to_see_the_title_Products_Odoo() throws InterruptedException {
-        Thread.sleep(5000);
+        Thread.sleep(8000);
         String actualTitleProductPage = Driver.getDriver().getTitle();
         String expectedTitleProductPage = "Products - Odoo";
         Assert.assertEquals(actualTitleProductPage, expectedTitleProductPage, "Titles of the PRODUCTS page do NOT match");
@@ -70,6 +70,7 @@ public class ProductsPageForUser {
 
     @When("User clicks on search products for")
     public void user_clicks_on_search_products_for() {
+        SeleniumUtils.waitForVisibility(usersProductsPage.searchProductFor, 5);
         usersProductsPage.searchProductFor.click();
     }
 
@@ -77,6 +78,7 @@ public class ProductsPageForUser {
     public void user_clicks_on_the_cross_button() {
         List<WebElement> crosses = Driver.getDriver().findElements(By.xpath("//span[@class = 'o_searchview_facet_label']/following-sibling::div/following-sibling::div"));
         for (WebElement cross : crosses) {
+            SeleniumUtils.waitForVisibility(cross, 3);
             cross.click();
         }
     }
