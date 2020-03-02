@@ -5,6 +5,7 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import pages.Login_page;
@@ -16,7 +17,7 @@ import utilities.SeleniumUtils;
 import java.util.List;
 import java.util.Random;
 
-public class ProductsPageForUser {
+public class ProductsForUsers_stepDef {
     UsersProductsPage usersProductsPage = new UsersProductsPage();
     Login_page login_page = new Login_page();
 
@@ -60,19 +61,9 @@ public class ProductsPageForUser {
 
     @And("User enters {string} on the search box")
     public void userEntersOnTheSearchBox(String inputValue) {
-        usersProductsPage.productsSearchBox.sendKeys(inputValue);
+        usersProductsPage.productsSearchBox.sendKeys(inputValue, Keys.ENTER);
     }
 
-    @When("User enters {string}")
-    public void user_enters(String inputValue) {
-        usersProductsPage.productsSearchBox.sendKeys(inputValue);
-    }
-
-    @When("User clicks on search products for")
-    public void user_clicks_on_search_products_for() {
-        SeleniumUtils.waitForVisibility(usersProductsPage.searchProductFor, 5);
-        usersProductsPage.searchProductFor.click();
-    }
 
     @When("User clicks on the cross button")
     public void user_clicks_on_the_cross_button() {
@@ -85,7 +76,7 @@ public class ProductsPageForUser {
 
     @When("User enters the {string}")
     public void user_enters_the(String inputWrongValue) {
-        usersProductsPage.productsSearchBox.sendKeys(inputWrongValue);
+        usersProductsPage.productsSearchBox.sendKeys(inputWrongValue, Keys.ENTER);
     }
 
     @Then("User sees a message")
