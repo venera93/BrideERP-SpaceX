@@ -15,10 +15,6 @@ public class UsersProductsPage {
     public WebElement productsButton;
     @FindBy (xpath = "//input[@class = 'o_searchview_input']")
     public WebElement productsSearchBox;
-    @FindBy (xpath = "//a[@href='#']/em[.='Product']")
-    public WebElement searchProductFor;
-    @FindBy (xpath = "//span[@class = 'o_searchview_facet_label']/following-sibling::div/following-sibling::div")
-    public WebElement productCrossButton;
     @FindBy (css = "div.oe_view_nocontent")
     public WebElement wrongSearchMessage;
     @FindBy (xpath = "//span[@name='name']")

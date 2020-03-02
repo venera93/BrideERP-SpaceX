@@ -2,14 +2,14 @@ Feature: Vendors Features
 
   @smoketest
   Scenario: Vendor button verification
-#    Given the user is login as a user
+    Given the user is login as a user
     When user click on purchase tab
     Then user should see vendors tab
     And user should taken to the Vendors page after clicking Vendors tab
 
   @smoketest
     Scenario: Create new vendor verification
-#    Given the user is login as a user
+    Given the user is login as a user
    When user click on purchase tab
      And user should taken to the Vendors page after clicking Vendors tab
       And user should be able to see the create button and click it
@@ -19,7 +19,7 @@ Feature: Vendors Features
 
   @smoketest
       Scenario: Search Existing vendors
-#       Given the user is login as a user
+      Given the user is login as a user
       When user click on purchase tab
         And user should taken to the Vendors page after clicking Vendors tab
         And User should be able to see the Search field left side of the page

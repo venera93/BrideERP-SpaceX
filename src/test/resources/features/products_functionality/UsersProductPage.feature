@@ -17,10 +17,8 @@ Feature: Products tag
     When User clicks on the purchases module
     And User clicks on the Products tag
     And User enters "laptop" on the search box
-    And  User clicks on search products for
     Then User clicks on the cross button
     And User enters the "tiktik"
-    And  User clicks on search products for
     Then User sees a message
 
   @smoketest

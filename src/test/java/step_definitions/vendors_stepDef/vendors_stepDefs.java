@@ -20,17 +20,17 @@ import java.util.List;
 public class vendors_stepDefs {
     Vendors_Page vp=new Vendors_Page();
 
-//    @Given("the user is login as a user")
-//    public void the_user_is_login_as_a_user() {
-//
-//        Login_page login=new Login_page();
-//        Driver.getDriver().get(Config.getProperty("UrlBriteERP"));
-//        login.usernameInput.sendKeys(Config.getProperty("briteUserName"));
-//        login.passwordInput.sendKeys(Config.getProperty("britePassword"));
-//        login.loginButton.click();
-//
-//
-//    }
+    @Given("the user is login as a user")
+    public void the_user_is_login_as_a_user() {
+
+        Login_page login=new Login_page();
+        Driver.getDriver().get(Config.getProperty("UrlBriteERP"));
+        login.usernameInput.sendKeys(Config.getProperty("ErpUsername"));
+        login.passwordInput.sendKeys(Config.getProperty("ErpPassword"));
+        login.loginButton.click();
+
+
+    }
 
     @When("user click on purchase tab")
     public void user_click_on_purchase_tab() {
